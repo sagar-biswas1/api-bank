@@ -3,6 +3,7 @@
 import { FC, useState } from 'react'
 import Button from './ui/Button'
 import { signIn, signOut } from 'next-auth/react'
+import { toast } from './ui/Toast'
 
 interface SignOutButtonProps {
   
@@ -16,11 +17,11 @@ const signUserOut = async () => {
     try{
         await signOut()
     }catch(err){
-        // toast({
-        //     title:"Error signing in",
-        //     message:"Please try again",
-        //     type:"error"
-        // })
+        toast({
+            title:"Error signing in",
+            message:"Please try again",
+            type:"error"
+        })
     }
 }
 
