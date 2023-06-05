@@ -4,10 +4,11 @@ import { FC } from 'react'
 import { buttonVariants } from '@/ui/Button'
 import SignInButton from '@/components/SignInButton'
 import SignOutButton from './SignOutButton'
+import ThemeToggle from './ThemeToggle'
 
 
 
-const Navbar =async () => {
+const Navbar = async () => {
 const session = await getServerSession()
 
 
@@ -17,10 +18,10 @@ const session = await getServerSession()
             text similarity 
         </Link>
         <div className='md:hidden'>
-{/* <ThemeToggle/> */}
+<ThemeToggle/>
         </div>
         <div className='hidden md:flex gap-4'>
-{/* <ThemeToggle/>  */}
+<ThemeToggle/> 
 <Link href="/documentation" className={buttonVariants({variant:"ghost"})}>
             Doc 
         </Link>
@@ -30,7 +31,7 @@ const session = await getServerSession()
             Dashboard
         </Link>
         <SignOutButton />
-        </>:<SignInButton/>}
+        </>:<SignInButton />}
         </div>
     </div>
   </div>
